@@ -31,7 +31,6 @@ namespace BlockKing
             services.AddRazorPages();
             services.AddEntityFrameworkSqlServer();
             services.AddDbContextPool<BlockKingDbContext>(
-                //options => options.UseMySql("Server=localhost;port=3306;Database=BlockKing;user=toor;password=7vC=zp#z<mz%DPlC{R+e;",
                 options => options.UseMySql(Configuration["ConnectionStrings:mySQLConnectionString"],
                 mysqlOptions =>
                 {
@@ -42,28 +41,6 @@ namespace BlockKing
                         errorNumbersToAdd: null);
                 }));
         }
-        /*
-            //var connectionString = Configuration.GetConnectionString("mySQLConnectionString");
-            //services.AddDbContext<BlockKingDbContext>(options => options.UseMySQL(connectionString));
-            services.AddDbContextPool<BlockKingDbContext>((serviceProvider, options) =>
-            {
-                // replace with your connection string
-                options.UseMySql("Server=localhost;port=3306;Database=BlockKing;user=root;password=7vC=zp#z<mz%DPlC{R+e;", mySqlOptions => mySqlOptions
-                    // replace with your Server Version and Type
-                    .ServerVersion(new Version(8, 0, 18), ServerType.MySql));
-                options.UseInternalServiceProvider(serviceProvider);
-            });
-        }*/
-        /*public static void ConfigureEntityFramework(IServiceCollection services)
-        {
-            services.AddDbContextPool<BlockKingDbContext>(
-                options => options.UseMySql("Server=localhost;port=3306;Database=BlockKing;user=root;password=7vC=zp#z<mz%DPlC{R+e;",
-                    mysqlOptions =>
-                    {
-                        mysqlOptions.ServerVersion(new Version(8, 0, 18), ServerType.MySql);
-                    }
-            ));
-        }*/
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
