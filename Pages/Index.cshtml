@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+    <h1 class="display-4">King of the Block</h1>
+    <p>Do you have what it takes to be the king of the block?</p>
+</div>
+<div id="login" style="width:100%; height:100%;">
+    <form>
+        <label for="username">Username (Email):</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>

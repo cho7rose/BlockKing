@@ -1,0 +1,39 @@
+﻿@page
+@model BlockKing.Ui.Pages.StatusModel
+@{
+
+    ViewData["Title"] = "Home";
+    //var result = Hey.Buildings.ToList();
+
+}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">BuildingId</th>
+                <th scope="col">XLocation</th>
+                <th scope="col">YLocation</th>
+                <th scope="col">Name</th>
+                <th scope="col">DefenseId</th>
+                <th scope="col">Icon</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                if (Model.ViewData.Count > 0)
+                {
+                    foreach (var item in Model.Buildings)
+                    {
+                        <tr>
+                            <td>@item.BuildingId</td>
+                            <td>@item.XLocation</td>
+                            <td>@item.YLocation</td>
+                            <td>@item.Name</td>
+                            <td>@item.DefenseId</td>
+                            <td>@item.Icon</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
